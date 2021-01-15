@@ -4,9 +4,9 @@
  * --- Generated at 15.01.2021 11:23:36                         ---
  * ----------------------------------------------------------------
  */
-package concerttours.jalo;
+package concerttoursdependent.jalo;
 
-import concerttours.constants.ConcerttoursConstants;
+import concerttoursdependent.constants.ConcerttoursdependentConstants;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.extension.Extension;
@@ -14,10 +14,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Generated class for type <code>ConcerttoursManager</code>.
+ * Generated class for type <code>ConcerttoursdependentManager</code>.
  */
 @SuppressWarnings({"deprecation","unused","cast","PMD"})
-public abstract class GeneratedConcerttoursManager extends Extension
+public abstract class GeneratedConcerttoursdependentManager extends Extension
 {
 	protected static final Map<String, Map<String, AttributeMode>> DEFAULT_INITIAL_ATTRIBUTES;
 	static
@@ -40,7 +40,7 @@ public abstract class GeneratedConcerttoursManager extends Extension
 	@Override
 	public String getName()
 	{
-		return ConcerttoursConstants.EXTENSIONNAME;
+		return ConcerttoursdependentConstants.EXTENSIONNAME;
 	}
 	
 }

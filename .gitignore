@@ -2,6 +2,7 @@
 /temp
 /bin/*
 !/bin/custom/
+/bin/custom/.idea
 /roles
 /data
 /config/backup

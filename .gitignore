@@ -1,5 +1,12 @@
 /log
 /temp
-/bin/
-!/bin/custom
+/bin/*
+!/bin/custom/
 /roles
+/data
+/config/backup
+/config/customize
+/config/languages
+/config/tcServer
+/config/tomcat
+/config/readme.txt

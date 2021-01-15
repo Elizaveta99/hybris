@@ -1,17 +1,17 @@
 /*
  * ----------------------------------------------------------------
  * --- WARNING: THIS FILE IS GENERATED AND WILL BE OVERWRITTEN! ---
- * --- Generated at 24.12.2020 16:05:20                         ---
+ * --- Generated at 15.01.2021 10:24:57                         ---
  * ----------------------------------------------------------------
  */
 package concerttours.jalo;
 
+import concerttours.constants.ConcerttoursConstants;
 import de.hybris.platform.jalo.Item;
 import de.hybris.platform.jalo.Item.AttributeMode;
 import de.hybris.platform.jalo.extension.Extension;
 import java.util.HashMap;
 import java.util.Map;
-import concerttours.constants.ConcerttoursConstants;
 
 /**
  * Generated class for type <code>ConcerttoursManager</code>.

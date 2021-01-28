@@ -39,6 +39,15 @@
 
 	<relations>
 		<!--1:n-->
+		<relation code="Concert2Band" autocreate="true" generate="false" localized="false">
+			<sourceElement qualifier="concert" type="Concert" cardinality="one">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</sourceElement>
+			<targetElement qualifier="bands" type="Band" collectiontype="list" cardinality="many">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</targetElement>
+		</relation>
+		<!--1:n-->
 		<relation code="Album2Song" autocreate="true" generate="false" localized="false">
 			<sourceElement qualifier="album" type="Album" cardinality="one">
 				<modifiers read="true" write="true" search="true" optional="true" />
@@ -73,6 +82,10 @@
 		<itemtype generate="true" code="Album" autocreate="true">
 			<deployment table="Albums" typecode="12345"/>
 			<attributes>
+				<attribute qualifier="code" type="java.lang.String">
+					<description>short unique code of album</description>
+					<persistence type="property" />
+				</attribute>
 				<attribute qualifier="name" type="java.lang.String">
 					<description>name of album</description>
 					<persistence type="property" />
@@ -87,6 +100,10 @@
 		<itemtype generate="true" code="Song" autocreate="true">
 			<deployment table="Songs" typecode="12347"/>
 			<attributes>
+				<attribute qualifier="code" type="java.lang.String">
+					<description>short unique code of song</description>
+					<persistence type="property" />
+				</attribute>
 				<attribute qualifier="name" type="java.lang.String">
 					<description>name of song</description>
 					<persistence type="property" />
@@ -97,6 +114,10 @@
 		<itemtype generate="true" code="Poster" autocreate="true">
 			<deployment table="Posters" typecode="12346"/>
 			<attributes>
+				<attribute qualifier="code" type="java.lang.String">
+					<description>short unique code of poster</description>
+					<persistence type="property" />
+				</attribute>
 				<attribute qualifier="title" type="java.lang.String">
 					<description>title of poster</description>
 					<persistence type="property" />
@@ -139,8 +160,13 @@
 			</attributes>
 		</itemtype>
 
-		<itemtype generate="true" code="Concert" extends="VariantProduct" autocreate="true">
+		<itemtype generate="true" code="Concert" autocreate="true">
+			<deployment table="Concerts" typecode="12348" />
 			<attributes>
+				<attribute qualifier="code" type="java.lang.String">
+					<description>short unique code of concert</description>
+					<persistence type="property" />
+				</attribute>
 				<attribute qualifier="venue" type="java.lang.String">
 					<description>venue of concert</description>
 					<persistence type="property" />

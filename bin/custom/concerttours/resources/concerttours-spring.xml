@@ -19,6 +19,10 @@
 
     <bean id="concertDaysUntilAttributeHandler" class="concerttours.attributehandlers.ConcertDaysUntilAttributeHandler"/>
 
+    <bean id="ConcerttoursCustomSetup" class="concerttours.setup.ConcerttoursCustomSetup" >
+        <property name="importService" ref="importService"/>
+    </bean>
+
 	<!--
 	The hybris platform provides one single Spring application context for beans located at the jalo layer.
 	Each extension can add beans to this context by specifying them at this configuration file.

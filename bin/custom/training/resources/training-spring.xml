@@ -108,4 +108,15 @@
     <bean id="myProductService" class="org.training.service.impl.MyDefaultProductServiceImpl"
           parent="abstractBusinessService" />
 
+    <bean id="productFacade" class="org.training.facades.impl.DefaultProductFacade">
+        <property name="productService" ref="productService"/>
+        <property name="priceService" ref="priceService"/>
+        <property name="productConverter" ref="productConverter"/>
+        <property name="priceInformationConverter" ref="priceInformationConverter"/>
+    </bean>
+
+    <bean id="productConverter" class="org.training.converters.ProductConverter"/>
+
+    <bean id="priceInformationConverter" class="org.training.converters.PriceInformationConverter"/>
+
 </beans>

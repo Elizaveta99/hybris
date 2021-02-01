@@ -1,14 +1,13 @@
 package org.training.web.controllers;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import de.hybris.platform.catalog.CatalogService;
-import de.hybris.platform.core.model.product.ProductModel;
-import de.hybris.platform.product.ProductService;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
+import org.training.data.ProductData;
+import org.training.facades.ProductFacade;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,16 +15,16 @@ public class ProductController implements Controller
 {
 
     private CatalogService catalogService;
-    private ProductService productService;
+    private ProductFacade productFacade;
 
     public void setCatalogService(final CatalogService catalogService)
     {
         this.catalogService = catalogService;
     }
 
-    public void setProductService(final ProductService productService)
+    public void setProductFacade(final ProductFacade productFacade)
     {
-        this.productService = productService;
+        this.productFacade = productFacade;
     }
 
     public ModelAndView handleRequest(final HttpServletRequest request,
@@ -34,10 +33,10 @@ public class ProductController implements Controller
         catalogService.setSessionCatalogVersion("hwcatalog", "Online");
 
         String code = request.getParameter("code");
-        ProductModel product = null;
+        ProductData product = null;
         if (code != null)
         {
-            product = productService.getProductForCode(code);
+            product = productFacade.getProduct(code);
         }
         Map<String, Object> model = new HashMap<String, Object>();
         model.put("product", product);

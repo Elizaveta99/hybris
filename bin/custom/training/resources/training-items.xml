@@ -22,7 +22,7 @@
 				  jaloclass="org.training.jalo.ContactRequest"
 				  extends="GenericItem"
 				  autocreate="true">
-			<deployment table="ContactRequests" typecode="12348"/>
+			<deployment table="ContactRequests" typecode="12349"/>
 			<attributes>
 				<attribute qualifier="message" type="java.lang.String">
 					<description>Message</description>

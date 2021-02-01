@@ -1,0 +1,22 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="/user.html" class="org.training.web.controllers.UserController">
+        <property name="userService" ref="userService"/>
+    </bean>
+
+    <bean name="/product.html" class="org.training.web.controllers.TrainingProductController">
+        <property name="trainingProductService" ref="productService"/>
+        <property name="catalogService" ref="catalogService"/>
+    </bean>
+
+    <bean name="/contactRequest.html" class="org.training.web.controllers.ContactRequestController">
+        <property name="contactRequestService" ref="contactRequestService"/>
+        <property name="modelService" ref="modelService"/>
+    </bean>
+
+    <bean name="/trainingProduct.html" class="org.training.web.controllers.TrainingProductController"/>
+
+</beans>

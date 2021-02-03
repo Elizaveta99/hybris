@@ -20,7 +20,9 @@ public final class ConcerttoursConstants extends GeneratedConcerttoursConstants 
 		//empty to avoid instantiating this constant class
 	}
 
-	// implement here constants used by this extension
+	public static final String NEW_BAND_HEADLINE = "New band, %s";
+	public static final String NEW_BAND_CONTENT = "There is a new band in town called, %s. Tour news to be announced soon.";
 
-    public static final String PLATFORM_LOGO_CODE = "concerttoursPlatformLogo";
+
+	public static final String PLATFORM_LOGO_CODE = "concerttoursPlatformLogo";
 }

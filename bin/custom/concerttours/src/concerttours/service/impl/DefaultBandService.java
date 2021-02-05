@@ -12,8 +12,7 @@ public class DefaultBandService implements BandService {
 
     private BandDAO bandDAO;
 
-    public void setBandDAO(final BandDAO bandDAO)
-    {
+    public void setBandDAO(BandDAO bandDAO) {
         this.bandDAO = bandDAO;
     }
 

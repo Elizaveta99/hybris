@@ -55,11 +55,14 @@
 
     <bean id="bandPopulator" class="concerttours.populators.BandPopulator" />
 
+    <bean id="bandGenresPopulator" class="concerttours.populators.BandGenresPopulator" />
+
     <bean id="bandConverter" parent="abstractPopulatingConverter">
         <property name="targetClass" value="concerttours.data.BandData" />
         <property name="populators">
             <list>
                 <ref bean="bandPopulator" />
+                <ref bean="bandGenresPopulator" />
             </list>
         </property>
     </bean>

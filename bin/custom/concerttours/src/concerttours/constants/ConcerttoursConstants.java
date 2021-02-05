@@ -13,12 +13,10 @@ package concerttours.constants;
 /**
  * Global class for all Concerttours constants. You can add global constants for your extension into this class.
  */
-public final class ConcerttoursConstants extends GeneratedConcerttoursConstants
-{
+public final class ConcerttoursConstants extends GeneratedConcerttoursConstants {
 	public static final String EXTENSIONNAME = "concerttours";
 
-	private ConcerttoursConstants()
-	{
+	private ConcerttoursConstants() {
 		//empty to avoid instantiating this constant class
 	}
 

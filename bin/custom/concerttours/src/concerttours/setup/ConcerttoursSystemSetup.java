@@ -19,25 +19,20 @@ import java.io.InputStream;
 import concerttours.constants.ConcerttoursConstants;
 import concerttours.service.ConcerttoursService;
 
-
 @SystemSetup(extension = ConcerttoursConstants.EXTENSIONNAME)
-public class ConcerttoursSystemSetup
-{
+public class ConcerttoursSystemSetup {
 	private final ConcerttoursService concerttoursService;
 
-	public ConcerttoursSystemSetup(final ConcerttoursService concerttoursService)
-	{
+	public ConcerttoursSystemSetup(ConcerttoursService concerttoursService) {
 		this.concerttoursService = concerttoursService;
 	}
 
 	@SystemSetup(process = SystemSetup.Process.INIT, type = SystemSetup.Type.ESSENTIAL)
-	public void createEssentialData()
-	{
+	public void createEssentialData() {
 		concerttoursService.createLogo(PLATFORM_LOGO_CODE);
 	}
 
-	private InputStream getImageStream()
-	{
+	private InputStream getImageStream() {
 		return ConcerttoursSystemSetup.class.getResourceAsStream("/concerttours/sap-hybris-platform.png");
 	}
 }

@@ -10,26 +10,24 @@
  */
 package concerttours.controller;
 
-import static concerttours.constants.ConcerttoursConstants.PLATFORM_LOGO_CODE;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import concerttours.service.ConcerttoursService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import concerttours.service.ConcerttoursService;
+import javax.annotation.Resource;
 
+import static concerttours.constants.ConcerttoursConstants.PLATFORM_LOGO_CODE;
 
 @Controller
-public class ConcerttoursHelloController
-{
-	@Autowired
+public class ConcerttoursHelloController {
+
+	@Resource
 	private ConcerttoursService concerttoursService;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String printWelcome(final ModelMap model)
-	{
+	public String printWelcome(ModelMap model) {
 		model.addAttribute("logoUrl", concerttoursService.getHybrisLogoUrl(PLATFORM_LOGO_CODE));
 		return "welcome";
 	}

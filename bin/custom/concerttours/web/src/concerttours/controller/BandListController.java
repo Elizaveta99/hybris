@@ -15,8 +15,7 @@ public class BandListController {
     private BandFacade bandFacade;
 
     @RequestMapping(value = "/bands", method = RequestMethod.GET)
-    public String showBands(final ModelMap model)
-    {
+    public String showBands(ModelMap model) {
         model.addAttribute("bands", bandFacade.getBands());
         return "bands";
     }

@@ -83,5 +83,20 @@
     <bean id="bandAlbumSalesEventListener" class="concerttours.events.BandAlbumSalesEventListener" parent="abstractEventListener" >
         <property name="modelService" ref="modelService" />
     </bean>
+
+    <bean id="generateTokenJobPerformable" class="concerttours.jobs.GenerateTokenJobPerformable"
+          parent="abstractJobPerformable">
+        <property name="modelService" ref="modelService" />
+        <property name="tokenItemService" ref="tokenItemService" />
+
+    </bean>
+
+    <bean id="tokenItemDAO" class="concerttours.daos.impl.DefaultTokenItemDAO">
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+
+    <bean id="tokenItemService" class="concerttours.service.impl.DefaultTokenItemService">
+        <property name="tokenItemDAO" ref="tokenItemDAO"/>
+    </bean>
 			
 </beans>

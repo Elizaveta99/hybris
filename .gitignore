@@ -16,6 +16,7 @@ platformhome.properties
 /bin/*
 !/bin/custom/
 /bin/custom/lib/
+/bin/custom/**/lib/
 /bin/custom/**/*testclasses.xml
 /bin/custom/**/*webtestclasses.xml
 /bin/custom/**/build.xml

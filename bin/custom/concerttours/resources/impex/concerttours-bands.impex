@@ -1,0 +1,31 @@
+# ImpEx for Importing Bands into Little Concert Tours Store
+ 
+INSERT_UPDATE Band;code[unique=true];name;albumSales;history
+;A001;yRock;1000000;Occasional tribute rock band comprising senior managers from a leading commerce software vendor
+;A006;yBand;;Dutch tribute rock band formed in 2013 playing classic rock tunes from the sixties, seventies and eighties
+;A003;yJazz;7;Experimental Jazz group from London playing many musical notes together in unexpected combinations and sequences
+;A004;Banned;427;Rejuvenated Polish boy band from the 1990s - this genre of pop music at its most dubious best
+;A002;Sirken;2000;"A cappella singing group based in Munich; an uplifting blend of traditional and contemporaneous songs"
+;A005;The Choir;49000;Enthusiastic, noisy gospel choir singing traditional gospel songs from the deep south
+;A007;The Quiet;1200;English choral society specialising in beautifully arranged, soothing melodies and songs
+
+# ImpEx for Importing Albums into Little Concert Tours Store
+
+INSERT_UPDATE Album;code[unique=true];name;date[map-delimiter=|]
+;A1;Album1;creation->10.10.1974 0:00:00|release->30.10.197 0:00:004
+;A2;Album2;creation->12.07.1990 0:00:00|release->15.07.1990 0:00:00
+;A3;Album3;creation->12.07.1990 0:00:00|release->15.07.1990 0:00:00
+;A4;Album4;creation->12.07.1990 0:00:00|release->15.07.1990 0:00:00
+;A5;Album5;creation->12.07.1990 0:00:00|release->15.07.1990 0:00:00
+;A6;Album6;creation->12.07.1990 0:00:00|release->15.07.1990 0:00:00
+;A7;Album7;creation->12.07.1990 0:00:00|release->15.07.1990 0:00:00
+
+# ImpEx for Importing Posters into Little Concert Tours Store
+
+INSERT_UPDATE Poster;code[unique=true];title;content
+;P1;Poster1;Poster1 for Concert1
+;P2;Poster2;Poster2 for Concert2
+;P3;Poster3;Poster3 for Concert3
+;P4;Poster4;Poster4 for Concert4
+;P5;Poster5;Poster5 for Concert5
+;P6;Poster6;Poster6 for Concert6

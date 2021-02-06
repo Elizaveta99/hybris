@@ -4,6 +4,7 @@
 	
 	<extension dir="../custom/concerttours"/>
 	<extension dir="../custom/concerttoursdependent"/>
+	<extension dir="../custom/training"/>
 	
   </extensions>
 </hybrisconfig>

@@ -1,0 +1,2 @@
+INSERT_UPDATE MinConstraint;id[unique=true];severity(code,itemtype(code));active;annotation;descriptor(enclosingType(code),qualifier);message[lang=ru];message[lang=en];value
+                           ;AlbumSalesMustNotBeNegative;ERROR:Severity;true;javax.validation.constraints.Min;Band:albumSales;Продажи альбомов не должны быть отрицательными;Album sales must not be negative;0

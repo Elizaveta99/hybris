@@ -25,6 +25,7 @@ public class ConcerttoursCustomSetup {
     public boolean putInMyEssentialData() {
         LOG.info("Starting custom essential data loading for the Concerttours extension");
         impexImport("/impex/essentialdata-Jobs.impex");
+        impexImport("/impex/essentialdata-constraints.impex");
         LOG.info("Custom essential data loading for the Concerttours extension completed.");
         return true;
     }

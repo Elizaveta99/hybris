@@ -53,7 +53,9 @@
         <property name="bandConverter" ref="bandConverter" />
     </bean>
 
-    <bean id="bandPopulator" class="concerttours.populators.BandPopulator" />
+    <bean id="bandPopulator" class="concerttours.populators.BandPopulator" >
+        <property name="configurationService" ref="configurationService" />
+    </bean>
 
     <bean id="bandGenresPopulator" class="concerttours.populators.BandGenresPopulator" />
 

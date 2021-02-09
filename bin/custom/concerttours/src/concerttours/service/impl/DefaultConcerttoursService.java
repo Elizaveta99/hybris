@@ -59,7 +59,7 @@ public class DefaultConcerttoursService implements ConcerttoursService {
 	public void createLogo(String logoCode) {
 		Optional<CatalogUnawareMediaModel> existingLogo = findExistingLogo(logoCode);
 
-		CatalogUnawareMediaModel media = Optional.of(existingLogo.get())
+		CatalogUnawareMediaModel media = Optional.of(existingLogo).get()
 				.orElse(modelService.create(CatalogUnawareMediaModel.class));
 
 		media.setCode(logoCode);

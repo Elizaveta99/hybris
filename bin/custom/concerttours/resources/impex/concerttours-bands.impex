@@ -12,13 +12,13 @@ INSERT_UPDATE Band;code[unique=true];name;albumSales;history
 # ImpEx for Importing Albums into Little Concert Tours Store
 
 INSERT_UPDATE Album;code[unique=true];name;date[map-delimiter=|]
-;A1;Album1;creation->10.10.1974 0:00:00|release->30.10.197 0:00:004
-;A2;Album2;creation->12.07.1990 0:00:00|release->15.07.1990 0:00:00
-;A3;Album3;creation->12.07.1990 0:00:00|release->15.07.1990 0:00:00
-;A4;Album4;creation->12.07.1990 0:00:00|release->15.07.1990 0:00:00
-;A5;Album5;creation->12.07.1990 0:00:00|release->15.07.1990 0:00:00
-;A6;Album6;creation->12.07.1990 0:00:00|release->15.07.1990 0:00:00
-;A7;Album7;creation->12.07.1990 0:00:00|release->15.07.1990 0:00:00
+;A1;Album1;creation->Jul 26, 2017 18:10:02 +0530|release->Jul 26, 2017 18:10:02 +0530
+;A2;Album2;creation->Jul 26, 2017 18:10:02 +0530|release->Jul 26, 2017 18:10:02 +0530
+;A3;Album3;creation->Jul 26, 2017 18:10:02 +0530|release->Jul 26, 2017 18:10:02 +0530
+;A4;Album4;creation->Jul 26, 2017 18:10:02 +0530|release->Jul 26, 2017 18:10:02 +0530
+;A5;Album5;creation->Jul 26, 2017 18:10:02 +0530|release->Jul 26, 2017 18:10:02 +0530
+;A6;Album6;creation->Jul 26, 2017 18:10:02 +0530|release->Jul 26, 2017 18:10:02 +0530
+;A7;Album7;creation->Jul 26, 2017 18:10:02 +0530|release->Jul 26, 2017 18:10:02 +0530
 
 # ImpEx for Importing Posters into Little Concert Tours Store
 

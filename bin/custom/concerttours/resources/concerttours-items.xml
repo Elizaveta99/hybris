@@ -38,6 +38,14 @@
 	</maptypes>
 
 	<relations>
+		<relation code="Producer2Concert" autocreate="true" generate="false" localized="false">
+			<sourceElement qualifier="producer" type="Producer" cardinality="one">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</sourceElement>
+			<targetElement qualifier="concerts" type="Concert" collectiontype="list" cardinality="many">
+				<modifiers read="true" write="true" search="true" optional="true" />
+			</targetElement>
+		</relation>
 		<!--1:n-->
 		<relation code="Concert2Band" autocreate="true" generate="false" localized="false">
 			<sourceElement qualifier="concert" type="Concert" cardinality="one">
@@ -234,6 +242,24 @@
 					<defaultvalue>
 						concerttours.constraints.NotLoremIpsum.class
 					</defaultvalue>
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype generate="true" code="Producer" autocreate="true">
+			<deployment table="Producers" typecode="12245"/>
+			<attributes>
+				<attribute qualifier="code" type="java.lang.String">
+					<description>id of producer</description>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="firstName" type="java.lang.String">
+					<description>first name</description>
+					<persistence type="property" />
+				</attribute>
+				<attribute qualifier="lastName" type="java.lang.String">
+					<description>last name</description>
+					<persistence type="property" />
 				</attribute>
 			</attributes>
 		</itemtype>

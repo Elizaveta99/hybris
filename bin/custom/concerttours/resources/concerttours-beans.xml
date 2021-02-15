@@ -22,4 +22,20 @@
 		<property name = "albumsSold" type = "Long" />
 		<property name = "genres" type="java.util.List&lt;String&gt;"/>
 	</bean>
+
+	<bean class = "concerttours.data.ProducerData" >
+		<description>Data object representing a Producer</description>
+		<property name = "id" type = "String" />
+		<property name = "firstName" type = "String" />
+		<property name = "lastName" type = "String" />
+	</bean>
+
+	<bean class = "concerttours.data.ConcertData" >
+		<description>Data object representing a Concert</description>
+		<property name = "id" type = "String" />
+		<property name = "name" type = "String" />
+		<property name = "date" type = "java.util.Date" />
+		<property name = "venue" type = "String" />
+		<property name = "producer" type="concerttours.data.ProducerData"/>
+	</bean>
 </beans>

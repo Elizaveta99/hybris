@@ -18,7 +18,12 @@ INSERT_UPDATE CatalogVersion;catalog(id)[unique=true];version[unique=true];activ
 # Insert Products
 INSERT_UPDATE Product;code[unique=true];name;band(code);$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);$catalogVersion;$approved
 ;201701;The Grand Little x Tour;A001;;x;y;pieces;;Concert
- 
+
+#Insert Producers
+INSERT_UPDATE Producer;code[unique=true];firstName;lastName;concerts(code)
+;Pr1;John;Smith;20170101,20170102
+;Pr2;Bob;Smit;20170103
+
 # Insert Products
 INSERT_UPDATE Concert;code[unique=true];name;date[dateformat=dd.MM.yyyy];venue;concertType(code);albums(code);poster(code);baseProduct(code);$catalogVersion;$approved
 ;20170101;Grand Tour - Munich;21.07.2021;"hybris Munich, Germany";openair;A1,A2;P1;201701;

@@ -112,10 +112,11 @@
     <bean id="concertFacade" class="concerttours.facades.impl.DefaultConcertFacade" >
         <property name="concertService" ref="concertService" />
         <property name="concertConverter" ref="concertConverter" />
-        <property name="producerConverter" ref="producerConverter" />
     </bean>
 
-    <bean id="concertPopulator" class="concerttours.populators.ConcertPopulator" />
+    <bean id="concertPopulator" class="concerttours.populators.ConcertPopulator" >
+        <property name="producerConverter" ref="producerConverter" />
+    </bean>
 
     <bean id="producerPopulator" class="concerttours.populators.ProducerPopulator" />
 
@@ -129,7 +130,7 @@
     </bean>
 
     <bean id="producerConverter" parent="abstractPopulatingConverter">
-        <property name="targetClass" value="concerttours.data.ConcertData" />
+        <property name="targetClass" value="concerttours.data.ProducerData" />
         <property name="populators">
             <list>
                 <ref bean="producerPopulator" />

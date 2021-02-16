@@ -22,7 +22,7 @@
             </thead>
             <c:forEach var="concert" items="${concerts}">
                 <tr>
-                        <td>${concert.name}"</td>
+                        <td>${concert.name}</td>
                         <td>
                             <fmt:formatDate pattern="dd:MM:yyyy" value="${concert.date}" />
                         </td>

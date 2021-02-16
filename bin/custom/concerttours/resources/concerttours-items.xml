@@ -251,6 +251,7 @@
 			<attributes>
 				<attribute qualifier="code" type="java.lang.String">
 					<description>id of producer</description>
+					<modifiers unique="true" />
 					<persistence type="property" />
 				</attribute>
 				<attribute qualifier="firstName" type="java.lang.String">

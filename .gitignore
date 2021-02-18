@@ -20,6 +20,7 @@ platformhome.properties
 /bin/custom/**/*testclasses.xml
 /bin/custom/**/*webtestclasses.xml
 /bin/custom/**/build.xml
+/bin/custom/**/bandimages/*
 
 /roles
 /data

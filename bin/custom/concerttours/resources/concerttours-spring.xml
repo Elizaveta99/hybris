@@ -24,7 +24,7 @@
 
     <bean id="concertDaysUntilAttributeHandler" class="concerttours.attributehandlers.ConcertDaysUntilAttributeHandler"/>
 
-    <bean id="ConcerttoursCustomSetup" class="concerttours.setup.ConcerttoursCustomSetup" >
+    <bean id="concerttoursCustomSetup" class="concerttours.setup.ConcerttoursCustomSetup" >
         <property name="importService" ref="importService"/>
     </bean>
 	
@@ -59,7 +59,7 @@
 
     <bean id="bandGenresPopulator" class="concerttours.populators.BandGenresPopulator" />
 
-    <bean id="bandConverter" parent="abstractPopulatingConverter">
+    <bean id="bandConverter" parent="abstractPopulatingConverter" class="concerttours.converters.BandConverter">
         <property name="targetClass" value="concerttours.data.BandData" />
         <property name="populators">
             <list>
@@ -67,6 +67,7 @@
                 <ref bean="bandGenresPopulator" />
             </list>
         </property>
+        <property name="mediaService" ref="mediaService"/>
     </bean>
 
     <bean id="concerttourEventListener" class="concerttours.events.NewBandEventListener" parent="abstractEventListener">

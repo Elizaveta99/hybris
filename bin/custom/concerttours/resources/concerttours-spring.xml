@@ -100,5 +100,42 @@
     <bean id="tokenItemService" class="concerttours.service.impl.DefaultTokenItemService">
         <property name="tokenItemDAO" ref="tokenItemDAO"/>
     </bean>
+
+    <bean id="concertDAO" class="concerttours.daos.impl.DefaultConcertDao">
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+
+    <bean id="concertService" class="concerttours.service.impl.DefaultConcertService">
+        <property name="concertDAO" ref="concertDAO"/>
+    </bean>
+
+    <bean id="concertFacade" class="concerttours.facades.impl.DefaultConcertFacade" >
+        <property name="concertService" ref="concertService" />
+        <property name="concertConverter" ref="concertConverter" />
+    </bean>
+
+    <bean id="concertPopulator" class="concerttours.populators.ConcertPopulator" >
+        <property name="producerConverter" ref="producerConverter" />
+    </bean>
+
+    <bean id="producerPopulator" class="concerttours.populators.ProducerPopulator" />
+
+    <bean id="concertConverter" parent="abstractPopulatingConverter">
+        <property name="targetClass" value="concerttours.data.ConcertData" />
+        <property name="populators">
+            <list>
+                <ref bean="concertPopulator" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="producerConverter" parent="abstractPopulatingConverter">
+        <property name="targetClass" value="concerttours.data.ProducerData" />
+        <property name="populators">
+            <list>
+                <ref bean="producerPopulator" />
+            </list>
+        </property>
+    </bean>
 			
 </beans>

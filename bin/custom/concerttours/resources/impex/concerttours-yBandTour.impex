@@ -6,7 +6,7 @@ $supercategories=supercategories(code, $catalogVersion)
 $baseProduct=baseProduct(code,$catalogVersion)
 $approved=approvalstatus(code)[default='approved']
 $catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Online'])[unique=true,default=$productCatalog:Online]
- 
+
 # Product catalog
 INSERT_UPDATE Catalog;id[unique=true]
 ;$productCatalog
@@ -14,16 +14,21 @@ INSERT_UPDATE Catalog;id[unique=true]
 # Product cataog version
 INSERT_UPDATE CatalogVersion;catalog(id)[unique=true];version[unique=true];active;languages(isoCode);readPrincipals(uid)
 ;$productCatalog;Online;true;en;employeegroup
- 
+
 # Insert Products
 INSERT_UPDATE Product;code[unique=true];name;band(code);$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);$catalogVersion;$approved
 ;201701;The Grand Little x Tour;A001;;x;y;pieces;;Concert
- 
+
+#Insert Producers
+INSERT_UPDATE Producer;code[unique=true];firstName;lastName;concerts(code)
+;Pr1;John;Smith;20170101,20170102
+;Pr2;Bob;Smit;20170103
+
 # Insert Products
 INSERT_UPDATE Concert;code[unique=true];name;date[dateformat=dd.MM.yyyy];venue;concertType(code);albums(code);poster(code);baseProduct(code);$catalogVersion;$approved
-;20170101;Grand Tour - Munich;21.07.2021;"hybris Munich, Germany";openair;A1,A2;P1;201701;
-;20170102;Grand Tour - London;01.11.2021;"hybris London, UK";openair;A3;P2;201701;
-;20170103;Grand Tour - Montreal;15.06.2017;"hybris Montreal, Canada";indoor;A4;P3;201701;
-;20170104;Grand Tour - Gliwice;04.11.2017;"hybris Gliwice, Poland";indoor;A5;P4;201701;
-;20170105;Grand Tour - Boulder;07.01.2018;"hybris Boulder, USA";indoor;A6;P5;201701;
-;20170106;Grand Tour - Boston;;"hybris Boston, USA";;A7;P6;201701;
+;20170101;Grand Tour - Munich;21.07.2021;"hybris Munich, Germany";openair;A1,A2;P1;201701
+;20170102;Grand Tour - London;01.11.2021;"hybris London, UK";openair;A3;P2;201701
+;20170103;Grand Tour - Montreal;15.06.2017;"hybris Montreal, Canada";indoor;A4;P3;201701
+;20170104;Grand Tour - Gliwice;04.11.2017;"hybris Gliwice, Poland";indoor;A5;P4;201701
+;20170105;Grand Tour - Boulder;07.01.2018;"hybris Boulder, USA";indoor;A6;P5;201701
+;20170106;Grand Tour - Boston;;"hybris Boston, USA";;A7;P6;201701

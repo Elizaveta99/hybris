@@ -34,36 +34,32 @@ import concerttours.service.impl.DefaultConcerttoursService;
  * in mind that by default it assumes that annotated field name matches the Spring Bean ID.
  */
 @IntegrationTest
-public class DefaultConcerttoursServiceIntegrationTest extends ServicelayerBaseTest
-{
+public class DefaultConcerttoursServiceIntegrationTest extends ServicelayerBaseTest {
 	@Resource
 	private ConcerttoursService concerttoursService;
 	@Resource
 	private FlexibleSearchService flexibleSearchService;
 
 	@Before
-	public void setUp() throws Exception
-	{
+	public void setUp() throws Exception {
 		concerttoursService.createLogo(PLATFORM_LOGO_CODE);
 	}
 
 	@Test
-	public void shouldReturnProperUrlForLogo() throws Exception
-	{
+	public void shouldReturnProperUrlForLogo() throws Exception {
 		// given
-		final String logoCode = "concerttoursPlatformLogo";
+		String logoCode = "concerttoursPlatformLogo";
 
 		// when
-		final String logoUrl = concerttoursService.getHybrisLogoUrl(logoCode);
+		String logoUrl = concerttoursService.getHybrisLogoUrl(logoCode);
 
 		// then
 		assertThat(logoUrl).isNotNull();
 		assertThat(logoUrl).isEqualTo(findLogoMedia(logoCode).getURL());
 	}
 
-	private MediaModel findLogoMedia(final String logoCode)
-	{
-		final FlexibleSearchQuery fQuery = new FlexibleSearchQuery("SELECT {PK} FROM {Media} WHERE {code}=?code");
+	private MediaModel findLogoMedia(final String logoCode) {
+		FlexibleSearchQuery fQuery = new FlexibleSearchQuery("SELECT {PK} FROM {Media} WHERE {code}=?code");
 		fQuery.addQueryParameter("code", logoCode);
 
 		return flexibleSearchService.searchUnique(fQuery);

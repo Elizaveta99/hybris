@@ -1,0 +1,3 @@
+# ImpEx for Importing TokenItem entity
+INSERT_UPDATE TokenItem;token[unique=true]
+;token

@@ -8,6 +8,7 @@
 <div class="container">
 
     <h2>List of bands</h2>
+    <h3>Token: ${token}</h3>
 
     <div>
         <table>

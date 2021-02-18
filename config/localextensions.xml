@@ -5,6 +5,7 @@
 	<extension dir="../custom/concerttours"/>
 	<extension dir="../custom/concerttoursdependent"/>
 	<extension dir="../custom/training"/>
+	<extension name="platformbackoffice"/>
 	
   </extensions>
 </hybrisconfig>

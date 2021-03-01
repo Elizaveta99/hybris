@@ -23,7 +23,9 @@
             <c:forEach var="band" items="${bands}">
                 <tr>
                         <td>${band.id}</td>
-                        <td>${band.name}"</td>
+                        <td>
+                            <a href="${pageContext.request.contextPath}/bands/${band.id}"><img src="${band.imageURL}" />${band.name}</a>
+                        </td>
                         <td>${band.description}$</td>
                         <td>${band.albumsSold}$</td>
                 </tr>

@@ -3,8 +3,10 @@ package concerttours.events;
 import concerttours.constants.ConcerttoursConstants;
 import concerttours.model.BandModel;
 import concerttours.model.NewsModel;
+import de.hybris.platform.catalog.CatalogVersionService;
 import de.hybris.platform.servicelayer.event.events.AfterItemCreationEvent;
 import de.hybris.platform.servicelayer.event.impl.AbstractEventListener;
+import de.hybris.platform.servicelayer.keygenerator.KeyGenerator;
 import de.hybris.platform.servicelayer.model.ModelService;
 
 import java.util.Date;
@@ -12,6 +14,8 @@ import java.util.Date;
 public class NewBandEventListener extends AbstractEventListener<AfterItemCreationEvent> {
 
     private ModelService modelService;
+    private KeyGenerator keyGenerator;
+    private CatalogVersionService catalogVersionService;
 
     public ModelService getModelService() {
         return modelService;
@@ -19,6 +23,14 @@ public class NewBandEventListener extends AbstractEventListener<AfterItemCreatio
 
     public void setModelService(ModelService modelService) {
         this.modelService = modelService;
+    }
+
+    public void setKeyGenerator(KeyGenerator keyGenerator) {
+        this.keyGenerator = keyGenerator;
+    }
+
+    public void setCatalogVersionService(CatalogVersionService catalogVersionService) {
+        this.catalogVersionService = catalogVersionService;
     }
 
     @Override
@@ -30,6 +42,8 @@ public class NewBandEventListener extends AbstractEventListener<AfterItemCreatio
                 String headline = String.format(ConcerttoursConstants.NEW_BAND_HEADLINE, band.getName());
                 String content = String.format(ConcerttoursConstants.NEW_BAND_CONTENT, band.getName());
                 NewsModel news = modelService.create(NewsModel.class);
+                news.setId(keyGenerator.generate().toString());
+                news.setCatalogVersion(catalogVersionService.getCatalogVersion(ConcerttoursConstants.CATALOG_ID, ConcerttoursConstants.CATALOG_VERSION_NAME));
                 news.setDate(new Date());
                 news.setHeadline(headline);
                 news.setContent(content);

@@ -26,6 +26,10 @@ public final class ConcerttoursConstants extends GeneratedConcerttoursConstants 
 	public static final long NEGATIVE_SALES = 0L;
 	public static final String BAND_SALES_HEADLINE = "%s album sales exceed 50000";
 	public static final String BAND_SALES_CONTENT = "%s album sales reported as %d";
+	public static final String FORMAT_BAND_DETAIL = "bandDetail";
+	public static final String FORMAT_BAND_LIST = "bandList";
+	public static final String CATALOG_ID = "concertoursProductCatalog";
+	public static final String CATALOG_VERSION_NAME = "Online";
 
 	public static final String PLATFORM_LOGO_CODE = "concerttoursPlatformLogo";
 }
